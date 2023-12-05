@@ -43,7 +43,7 @@ class User {
 
 
 
-class Pet{
+/*class Pet{
     constructor(petname, ownername, specie, breed){
         this.petname= petname;
         this.ownername = ownername;
@@ -70,7 +70,7 @@ console.log(p2.ownerNameTest(p1));
 console.log(p2.ownerNameTest(p3));*/
 
 
-let formBtn = document. querySelector('#petForm button')
+/*let formBtn = document. querySelector('#petForm button')
 formBtn.addEventListener('click', () => {
     //let f = document. forms;
     //let f = document. queryslelector('#petForm form')
@@ -81,10 +81,81 @@ formBtn.addEventListener('click', () => {
     let ownername = f[1].value;
     let specie = f[2].value;
     let breed = f[3].value;
-    
+
     let newPet = new Pet(petname, ownername, specie, breed);
+    
     console.log(`${newPet.petname}, ${newPet.ownername}, ${newPet.specie}, ${newPet.breed}`)
+    addlist(p);
 })
 
 
+function addlist(p){
+    let ul = document.querySelector('#listPet ul');
+    let li = document. createElement('li');
+    li.classList.add("list-group-item");
+
+    li.innerHTML = 
+        `<strong>PetName:</strong> ${p.petName} 
+        <strong>ownerName:</strong> ${p.ownerName} 
+        <strong>species:</strong> ${p.species} 
+        <strong>breed:</strong>${p.breed}`
+
+    li.innerHTML = "<span>"+p.petNäme+"</span>"
+    +"<br><span> "+p.ownername+" </span>"
+    +"<br><span> "+p.specie+" </span>"
+    +"<br><span> "+p.breed+" </span>";
+
+    ul.appendChild(li);
+
+}
+
+*/
+class Pet {
+    static count = 0;
+
+    constructor(petname, ownername, specie, breed) {
+      this.petname = petname;
+      this.ownername = ownername;
+      this.specie = specie;
+      this.breed = breed;
+      Pet.count++;
+    }
+  
+    ownerNameTest(pet) {
+      if (pet.ownername === this.ownername) {
+        return `The ${pet.petname} is owned by ${pet.ownername}`;
+      } else {
+        return `${pet.petname} does not belong to ${pet.ownername}. It belongs to ${this.ownername}`;
+      }
+    }
+  }
+  
+  let formBtn = document.querySelector('#petForm button');
+  formBtn.addEventListener('click', () => {
+    let f = document.querySelectorAll('#petForm input, #petForm select');
+  
+    let petname = f[0].value;
+    let ownername = f[1].value;
+    let specie = f[2].options[f[2].selectedIndex].text;
+    let breed = f[3].options[f[3].selectedIndex].text;
+  
+    let newPet = new Pet(petname, ownername, specie, breed);
+  
+    console.log(`${newPet.petname}, ${newPet.ownername}, ${newPet.specie}, ${newPet.breed}`);
+    addlist(newPet);
+  });
+  
+  function addlist(p) {
+    let ul = document.querySelector('#listPet ul');
+    let li = document.createElement('li');
+    li.classList.add("list-group-item");
+  
+    li.innerHTML =
+      `<strong>PetName:</strong> ${p.petname} 
+      <strong>ownerName:</strong> ${p.ownername} 
+      <strong>species:</strong> ${p.specie} 
+      <strong>breed:</strong>${p.breed}`;
+  
+    ul.appendChild(li);
+  }
 
