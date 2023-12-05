@@ -81,4 +81,67 @@ var4.forEach((n, i) => {
     console.log(i + " " + n);
   });
 
-  
+
+  //funzioni di calllback
+  var4.filter()
+  var4.map()
+  var4.find()
+  var4.reduce()
+
+  document.body.addEventListener('click', () => alert('click'))
+
+
+// Immediately Invoked Function Expression)
+  (function() {
+    console.log("Sono una funzione anonima !!!");
+  })();
+
+
+  // Object Js
+let obj1 = {
+    name: 'Mario',
+    "last name": "Rossi",
+    name: "Rossi",
+    city: "Roma",
+    2: "occhi",
+    saluta: function () {
+        return this.name +" "+ this.city;
+    }
+}
+    
+    console.log(obj1);
+    console.log(obj1.name); // dot notation
+    console. log(obj1['name']);
+    console. log(obj1["last name"]);
+    console.log(obj1[2])
+    console. log(obj1.saluta())
+
+let fiat500 = {
+    marca: 'Fiat',
+    modello: '500',
+    colore: 'Rosso'
+}   
+let fordFiesta = {
+    marca: 'Ford',
+    modello: 'Fiesta',
+    colore: 'blu'
+}    
+let smart = {
+    marca: 'Mercedes',
+    modello: 'Smart',
+    colore: 'Nero'
+}
+//invece
+// Prototipo JS
+function Auto(marca, modello, colore){
+    this.marca = marca;
+    this.modello = modello;
+    this.colore = colore;
+}
+
+let cinquecento = new Auto('Fiat', '500', 'Rosso');
+let fiesta = new Auto('Ford', 'Fiesta', 'blu');
+let msmart = new Auto('Mercedes', 'Smart', 'nero');
+console.log(cinquecento);
+console. log(fiesta);
+console. log(msmart);
