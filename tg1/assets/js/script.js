@@ -142,6 +142,27 @@ function Auto(marca, modello, colore){
 let cinquecento = new Auto('Fiat', '500', 'Rosso');
 let fiesta = new Auto('Ford', 'Fiesta', 'blu');
 let msmart = new Auto('Mercedes', 'Smart', 'nero');
+
+Auto.prototype.info = function () {
+    return this.marca + " " + this.modello + " " + this.colore;
+}
+//let msmart = new Auto('Mercedes', 'Smart', 'nero'); not important where to declare
+
+smart.cambio = 'automatico'; //if we want to add only to property of one variable
+
 console.log(cinquecento);
 console. log(fiesta);
 console. log(msmart);
+
+
+class AutoClass {
+    constructor(marca, modello, colore) {
+    this.marca = marca;
+    this.modello = modello;
+    this.colore = colore;
+    }
+}
+
+let c = new AutoClass('Fiat', '500', 'Rosso');
+let f = new AutoClass('Ford', 'Fiesta', 'blu');
+let s = new AutoClass('Mercedes', 'Smart', 'nero');
