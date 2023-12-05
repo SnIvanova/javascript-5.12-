@@ -166,3 +166,37 @@ class AutoClass {
 let c = new AutoClass('Fiat', '500', 'Rosso');
 let f = new AutoClass('Ford', 'Fiesta', 'blu');
 let s = new AutoClass('Mercedes', 'Smart', 'nero');
+
+
+class Persona{
+constructor(nome, cognome, citta) {
+this.nome = nome;
+this. congome = cognome;
+this.citta = citta;}}
+
+
+class Uomo {
+    constructor(nome, cognome, citta, barba) {
+    this.nome = nome;
+    this. congome = cognome;
+    this.citta = citta;
+    this.barba = barba;
+    }}
+    
+class Donna {
+    constructor(nome, cognome, citta, smalto) {
+    this.nome = nome;
+    this. congome = cognome;
+    this.citta = citta;
+    this.smalto = smalto;
+    }}
+
+    class Uomo extends Persona {
+        constructor(nome, cognome, citta, barba) {
+        
+        this.barba = barba;}}
+        
+     class Donna extends Persona {
+        constructor(nome, cognome, citta, smalto){
+        
+        this. smalto = smalto;}}
