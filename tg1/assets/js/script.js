@@ -167,36 +167,91 @@ let c = new AutoClass('Fiat', '500', 'Rosso');
 let f = new AutoClass('Ford', 'Fiesta', 'blu');
 let s = new AutoClass('Mercedes', 'Smart', 'nero');
 
+//clasess
+class Persona1{
+    constructor(nome, cognome, citta) {
+    this.nome = nome;
+    this. congome = cognome;
+    this.citta = citta;}
+}
 
-class Persona{
-constructor(nome, cognome, citta) {
-this.nome = nome;
-this. congome = cognome;
-this.citta = citta;}}
 
-
-class Uomo {
+class Uomo1 {
     constructor(nome, cognome, citta, barba) {
     this.nome = nome;
     this. congome = cognome;
     this.citta = citta;
     this.barba = barba;
-    }}
+    }
+}
     
-class Donna {
+//class with methods
+class Donna1 {
     constructor(nome, cognome, citta, smalto) {
     this.nome = nome;
     this. congome = cognome;
     this.citta = citta;
     this.smalto = smalto;
-    }}
+    }
+    saluta() {
+        return 'Ciao sono ' + this.nome + " " + this.congome;
+        }   
+        verso() {
+        return 'Ahhhhh';
+        }
+}
 
-    class Uomo extends Persona {
-        constructor(nome, cognome, citta, barba) {
+//invece poi defenire in un "super" classe:
+
+
+class Persona{
+    static count = 0;
+
+    constructor(nome, cognome, citta, anni) {
+    this.nome = nome;
+    this.cognome = cognome;
+    this.citta = citta;
+    this.anni = anni;
+    Persona. count++;}
+    compleanno() {
+        chis.anni++;
+    }
+}
+    
+class Uomo extends Persona {
+    constructor(nome, cognome, citta, barba) {
         
-        this.barba = barba;}}
+    this.barba = barba;}
+}
         
-     class Donna extends Persona {
-        constructor(nome, cognome, citta, smalto){
-        
-        this. smalto = smalto;}}
+class Donna extends Persona {
+    constructor(nome, cognome, citta, anni, smalto){
+        super(nome, cognome, citta)
+        this.x = x;  
+        this. smalto = smalto;
+    }
+    
+    altro(){
+        console.log('Sono una donna');
+
+
+    }
+}
+
+let u = new Uomo('Mario', 'Rossi', 'Roma', 44, true);
+console.log('Persone: ' + Persona.count)
+let m = new Uomo('Giuseppe', 'Verdi', 'Napoli', 38, false);
+console.log('Persone: ' + Persona.count)
+let d = new Donna('Francesca', 'Neri', 'Milano', 22, true);
+console.log('Persone: ' + Persona.count)
+
+u. compleanno();
+d. compleanno();
+
+
+console. log(u.verso());
+console.log(d.verso());
+
+console.log(u.saluta());
+console. log(m.saluta());
+console.log(d.saluta());
