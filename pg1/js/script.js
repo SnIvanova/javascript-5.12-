@@ -20,6 +20,7 @@ class User {
       this.lastName = lastName;
       this.age = age;
       this.location = location;
+      this.pets = []; 
     }
   
     confronto(persona) {
@@ -31,19 +32,90 @@ class User {
         return `${this.firstName} ${this.lastName} ha la stessa età di ${persona.firstName} ${persona.lastName}`;
       }
     }
+    addPet(pet) {
+        this.pets.push(pet);
+      }
   }
   
+  let users = [];
   let user1 = new User('John', 'Doe', 30, 'New York');
   let user2 = new User('Jane', 'Smith', 25, 'Los Angeles');
   let user3 = new User('Joan', 'Li', 28, 'Los 8');
-  
+  users.push(user1, user2, user3);
+
   console.log(user1.confronto(user2));
   console.log(user1.confronto(user3));
   console.log(user2.confronto(user3));
 
 
 
-/*class Pet{
+
+class Pet {
+    static count = 0;
+
+    constructor(petname, owner, specie, breed) {
+      this.petname = petname;
+      this.owner = owner;
+      this.specie = specie;
+      this.breed = breed;
+      Pet.count++;
+      owner.addPet(this);
+    }
+  
+    ownerNameTest(pet) {
+      if (pet.ownername === this.owner.lastName) {
+        return `The ${pet.petname} is owned by ${pet.ownername}`;
+      } else {
+        return `${pet.petname} does not belong to ${pet.ownername}. It belongs to ${this.ownername}`;
+      }
+    }
+  }
+  
+  let formBtn = document.querySelector('#petForm button');
+  formBtn.addEventListener('click', () => {
+    let f = document.querySelectorAll('#petForm input, #petForm select');
+    //let f = document.forms['petForm'].elements;
+  
+    let petname = f[0].value;
+    let ownername = f[1].value;
+    let specie = f[2].value;//options[f[2].selectedIndex].text;
+    let breed = f[3].value;//options[f[3].selectedIndex].text;
+  
+    let existingOwner = users.find(user => user.lastName === ownername);
+
+    if (!existingOwner) {
+
+        let newOwner = new User(ownername, 'Unknown', 0, 'Unknown');
+        users.push(newOwner);
+
+        let newPet = new Pet(petname, newOwner, specie, breed);
+  
+        console.log(`${newPet.petname}, ${newPet.owner.lastName}, ${newPet.specie}, ${newPet.breed}`);
+        addlist(newPet);
+    } else {
+
+        let newPet = new Pet(petname, existingOwner, specie, breed);
+        console.log(`${newPet.petname}, ${newPet.owner.lastName}, ${newPet.specie}, ${newPet.breed} - Existing owner`);
+      }
+  });
+  
+  function addlist(p) {
+    let ul = document.querySelector('#listPet ul');
+    let li = document.createElement('li');
+    li.classList.add("list-group-item");
+  
+    li.innerHTML =
+      `<strong>PetName:</strong> ${p.petname} 
+      <strong>ownerName:</strong> ${p.ownername} 
+      <strong>species:</strong> ${p.specie} 
+      <strong>breed:</strong>${p.breed}`;
+  
+    ul.appendChild(li);
+  }
+
+
+
+  /*class Pet{
     constructor(petname, ownername, specie, breed){
         this.petname= petname;
         this.ownername = ownername;
@@ -110,52 +182,3 @@ function addlist(p){
 }
 
 */
-class Pet {
-    static count = 0;
-
-    constructor(petname, ownername, specie, breed) {
-      this.petname = petname;
-      this.ownername = ownername;
-      this.specie = specie;
-      this.breed = breed;
-      Pet.count++;
-    }
-  
-    ownerNameTest(pet) {
-      if (pet.ownername === this.ownername) {
-        return `The ${pet.petname} is owned by ${pet.ownername}`;
-      } else {
-        return `${pet.petname} does not belong to ${pet.ownername}. It belongs to ${this.ownername}`;
-      }
-    }
-  }
-  
-  let formBtn = document.querySelector('#petForm button');
-  formBtn.addEventListener('click', () => {
-    let f = document.querySelectorAll('#petForm input, #petForm select');
-  
-    let petname = f[0].value;
-    let ownername = f[1].value;
-    let specie = f[2].options[f[2].selectedIndex].text;
-    let breed = f[3].options[f[3].selectedIndex].text;
-  
-    let newPet = new Pet(petname, ownername, specie, breed);
-  
-    console.log(`${newPet.petname}, ${newPet.ownername}, ${newPet.specie}, ${newPet.breed}`);
-    addlist(newPet);
-  });
-  
-  function addlist(p) {
-    let ul = document.querySelector('#listPet ul');
-    let li = document.createElement('li');
-    li.classList.add("list-group-item");
-  
-    li.innerHTML =
-      `<strong>PetName:</strong> ${p.petname} 
-      <strong>ownerName:</strong> ${p.ownername} 
-      <strong>species:</strong> ${p.specie} 
-      <strong>breed:</strong>${p.breed}`;
-  
-    ul.appendChild(li);
-  }
-
