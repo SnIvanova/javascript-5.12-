@@ -39,7 +39,7 @@ contatore ? console.log(contatore) : sessionStorage.setItem("start", 0);
 function updateTime() {
     let start = Number(sessionStorage.getItem("start"));
     sessionStorage.setItem("start", start + 1);
-    document.getElementById('timer').innerHTML = `${start}`;
+    document.querySelector('#timer').innerHTML = `${start}`;
 }
     setInterval(updateTime, 1000);
     // console.log(window);
@@ -55,7 +55,7 @@ function updateTime() {
 
 localStorage.removeItem('tasks');
 function loadTasks() {
-    const taskList = document.getElementById('taskList');
+    const taskList = document.querySelector('#taskList');
     taskList.innerHTML = '';
 
 
@@ -80,7 +80,7 @@ function loadTasks() {
 }
 
 function addTask() {
-    const taskInput = document.getElementById('taskInput');
+    const taskInput = document.querySelector('#taskInput');
     const task = taskInput.value.trim();
 
     if (task !== '') {
@@ -104,9 +104,9 @@ function removeTask(index) {
     loadTasks();
 }
 
-document.getElementById('addButton').addEventListener('click', addTask);
+document.querySelector('#addButton').addEventListener('click', addTask);
 
-document.getElementById('taskList').addEventListener('click', function (event) {
+document.querySelector('#taskList').addEventListener('click', function (event) {
     if (event.target.classList.contains('close')) {
         const index = event.target.getAttribute('data-index');
         removeTask(index);
