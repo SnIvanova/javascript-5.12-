@@ -49,14 +49,9 @@ btnReset.addEventListener('click', () => {
     localStorage.removeItem("name");
     document.querySelector(".es1 fieldset") . innerText = '';
 })
-
-es2
-
 */ 
 
-
-
-
+*/ 
 
 
 
@@ -75,6 +70,21 @@ function updateTime() {
     setInterval(updateTime, 1000);
     // console.log(window);
 
+
+
+
+    /*es2
+let contatore = sessionStorage.getItem("contatore") || 0;
+
+document.querySelector('.es2 h1').innerText = contatore;
+
+setInterval(() =>
+    let count = document.querySelector('.es2 h1'); I
+    count. innerText = contatore;
+    sessionStorage. setItem("contatore", contatore);
+    contatore++;
+
+}, 1000);
 
 
 /*. Testare Postaman con le API di JSONPlaceholder*/
