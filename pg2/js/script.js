@@ -175,10 +175,35 @@ function createListTodo() {
         todolist = JSON.parse(jsonList);
         let ul = document.querySelector(".es3 ul");
         ul.innerHTML = '';
-        todolist.forEach(element =>
+        ul.addEventListener('click', () =>
+            /console.dir(e.target.localName);
+            if(e.target.localName === 'button' ) {
+            alert('button' )
+        })
+
+        todolist.forEach((element, index) =>
             let li = document. createElement('li');
             li.classList.add('list-group-item)
-            li.innerHTML = `<span>${element}</span><button type="button" class="btn btn-sn btn-outline-danger">xk/button>`;
+            li.name = index;
+            /li.innerHTML = `<span>${element}</span><button type="button" class="btn btn-sn btn-outline-danger">xk/button>`;
+            
+            /better way:
+            let span = document. createElement('span' );
+            span. innerText = element;/
+            let btn = document. createElement('button' );
+            btn.type= "button";
+            btn.classList = "btn btn-sm btn-outline-danger float-end"
+            btn.innerHTML = '<i class="bi bi-trash3-fill"></i>'
+            btn.addEventListener('click', () =>{
+                alert('click');
+            })
+
+            /for knowing who clicked :
+            ul.addEventListener('click', (e) => {
+            console.log(e.target)})/
+
+            li.appendChild(span);
+            li.appendChild(btn);
             ul.appendChild(li);
         });
     }else{
