@@ -51,7 +51,7 @@ btnReset.addEventListener('click', () => {
 })
 */ 
 
-*/ 
+
 
 
 
@@ -156,4 +156,35 @@ document.querySelector('#taskList').addEventListener('click', function (event) {
 
 loadTasks();
 
+/*
 
+let todolist = [];
+
+let addTodo = document.querySelector('.es3 button.btn-dark');
+createListTodo();
+addTodo. addEventListener('click', () => {
+    let input = document.querySelector(".es3 input").value.trim();
+    todolist.push(input);
+    localStorage.setItem('todolist', JSON.stringify(todolist));
+    console. log(JSON. parse (localStorage.getItem('todolist'))
+})
+
+function createListTodo() {
+    let jsonList = localstorage.getItem('todolist');
+    if(jsonList) {
+        todolist = JSON.parse(jsonList);
+        let ul = document.querySelector(".es3 ul");
+        ul.innerHTML = '';
+        todolist.forEach(element =>
+            let li = document. createElement('li');
+            li.classList.add('list-group-item)
+            li.innerHTML = `<span>${element}</span><button type="button" class="btn btn-sn btn-outline-danger">xk/button>`;
+            ul.appendChild(li);
+        });
+    }else{
+        ul.innerHtml = '<span class="text-center"> nothing to do</span>'
+    
+    }
+}
+
+*/ 
