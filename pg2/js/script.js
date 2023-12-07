@@ -28,6 +28,37 @@ console. log(window);
 
 
 
+//teacher redo
+
+/*
+es1
+
+let btnAdd = document. querySelector('.es1 button.btn-dark') ;
+let btnReset = document.querySelector('.es1 button.btn-danger');
+
+document.querySelector(".es1 fieldset").innerText = localStorage.getItem('utente') || '';
+
+btnAdd.addEventListener('click', () => {
+    let input = document.querySelector(".es1 input").value.trim();
+    localStorage.setItem("name", input);
+    document.querySelector(".es1 input").value = "";
+    document.querySelector(".es1 fieldset").innerText = input;
+})
+
+btnReset.addEventListener('click', () => {
+    localStorage.removeItem("name");
+    document.querySelector(".es1 fieldset") . innerText = '';
+})
+
+es2
+
+*/ 
+
+
+
+
+
+
 
 /*
 . Crea un contatore che tenga conto del tempo che passa, utilizzando sessionStorage. Aggiornando la pagina il
