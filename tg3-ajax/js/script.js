@@ -15,6 +15,14 @@ xhr.onreadystatechange = function() {
     console.log(obj);
     createList(obj);}}
 
+xhr.onerror = function() { //for cathing the error
+    console.log('Error !! ' + xhr. responseText);}
+        
+        
+        
+
+
+
 document. addEventListener('DOMContentLoaded',()=>{
     console.log(div);
 })

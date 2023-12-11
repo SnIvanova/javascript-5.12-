@@ -94,16 +94,22 @@ document.addEventListener("DOMContentLoaded", function () {
   
     function addToCartAndUpdateTotal(book) {
 
-
+        
       cart.push(book);
   
-    
+      localStorage.setItem('cart', JSON.stringify(cart));
   
       const total = cart.reduce((acc, book) => acc + book.price, 0);
       cartTotal.textContent = `Totale carrello: ${total}€`;
-        localStorage.setItem('cart', JSON.stringify(cart));
     }
   
+
+    function removeFromCartAndUpdateTotal(book) {
+        let temp = cart.filter(book => book.id != book,id);
+        localStorage.setItem("cart", JSON.stringify(temp));
+        
+    }
+
     function handleAndLogError(status) {
       const errorMessages = {
         400: "Richiesta non valida",

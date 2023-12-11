@@ -1,0 +1,28 @@
+[ 
+    {
+
+        "nome": "Giuseppe",
+        "cognome": "Verdi",
+        "citta": "Milano",
+        "eta": 41,
+        "occhiali": false,
+        "linguaggi": ["html", "css"],
+        "indirizzo": {
+        "via": "Marconi 12",
+        "citta": "Roma",
+        "regione": "Lazio"
+        }
+    },
+    {
+        "nome": "Francesca",
+        "cognome": "Neri",
+        "eta": 33,
+        "occhiali": false,
+        "linguaggi": [],
+        "indirizzo": {
+        "via": "8 dicembre, 5",
+        "citta": "Napoli",
+        "regione": "Campania"
+        }
+    }
+]
