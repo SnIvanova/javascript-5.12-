@@ -11855,77 +11855,73 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-#gradBgn {
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
   width: 100%;
-  position: relative;
-  background: rgb(94, 0, 75);
-  background: -moz-linear-gradient(45deg, rgb(94, 0, 75) 0%, rgb(158, 0, 65) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, rgb(94, 0, 75) 0%, rgb(158, 0, 65) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, rgb(94, 0, 75) 0%, rgb(158, 0, 65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5e004b", endColorstr="#9e0041", GradientType=1); /* IE6-9 fallback on horizontal gradient */
-  background: url("/") no-repeat;
-  background-size: cover;
-  position: fixed;
-  top: 0;
-  height: 100vh;
+}
+
+body {
   width: 100%;
-  overflow: auto;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
 }
 
-.anton {
-  font-family: "Anton", sans-serif;
+header {
+  z-index: 3;
+  position: sticky;
+  width: 100%;
 }
 
-.openSans {
-  font-family: "Open Sans", sans-serif;
+.book-title {
+  height: 2.5rem;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.blurOverlay {
-  background: #fff;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 11;
+.card button {
+  width: 50%;
+  padding: 0.5rem 0.25rem;
+  font-size: 0.75rem !important;
+  height: 2rem !important;
 }
 
-.custom-link:hover {
-  color: #fff;
+@media (min-width: 768px) {
+  .card-container img {
+    height: 300px;
+  }
 }
-
-.custom-link {
-  text-decoration: none;
-  color: #cecece;
-  min-width: 120px;
-  display: inline-block;
+@media (min-width: 576px) {
+  #gradBgn {
+    font-size: 14px;
+  }
 }
-
-.hamLine {
-  display: block;
-  width: 24px;
-  margin-top: 4px;
-  border-top: 1px solid #fff;
-  vertical-align: middle;
-  transform-origin: 15% 15%;
-  transition: all 200ms linear;
+@media (min-width: 768px) {
+  #gradBgn {
+    font-size: 16px;
+  }
 }
-
-#subMenu {
-  display: inline-grid;
-  cursor: pointer;
-  z-index: 12;
+@media (min-width: 992px) {
+  #gradBgn {
+    font-size: 18px;
+  }
 }
-
-.slideRight .custom-link {
-  transform: translateX(20px);
-  transition: transform 200ms linear;
+@media (min-width: 1200px) {
+  #gradBgn {
+    font-size: 20px;
+  }
 }
-
-.menuClicked .hamLine:nth-child(1) {
-  transform: rotate(45deg);
-}
-
-.menuClicked .hamLine:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.menuClicked .hamLine:nth-child(2) {
-  display: none;
+@media (min-width: 1200px) {
+  #gradBgn {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
