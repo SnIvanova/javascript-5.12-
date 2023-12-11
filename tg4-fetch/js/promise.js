@@ -15,12 +15,12 @@ promise
 
 async function func(params) {
     await fetch("https://jsonplaceholder.typicode.com/users")
-    . then(response => response. json()) I;}
+    . then(response => response. json()) ;}
 
-    function func() {
-        let arr = [];
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then(response => response. json())
-            .then(json => arr = json)
-        console. log(arr);
+async function func() {
+    let arr = [];
+    await fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response. json())
+        .then(json => arr = json)
+    console. log(arr);
     }
