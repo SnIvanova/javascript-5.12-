@@ -2,9 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
-
-
 function funcLoadImages(searchKeyword) {
     console.log("Search query:", searchKeyword);
     const apiKey = 'RpdOPzUYT2VsW2AMO9iAMlssczMWjOHySSKrUBLECMyprQ246Yky6pWQ';
@@ -61,6 +58,7 @@ function funcLoadImages(searchKeyword) {
             title.textContent = photo.alt;
             cardBody.appendChild(title);
           }
+        
 
           if (photo.photographer) {
             const photographer = document.createElement("p");
@@ -68,6 +66,25 @@ function funcLoadImages(searchKeyword) {
             photographer.textContent = `Photographer: ${photo.photographer}`;
             cardBody.appendChild(photographer);
           }
+
+
+          const hideButton = document.createElement("button");
+          hideButton.className = "btn btn-danger";
+          hideButton.textContent = "Hide";
+          hideButton.addEventListener("click", () => {
+            card.style.display = "none";
+          });
+          cardBody.appendChild(hideButton);
+    
+
+          const viewButton = document.createElement("button");
+          viewButton.className = "btn btn-secondary";
+          viewButton.textContent = "View";
+          viewButton.addEventListener("click", () => {
+            alert(`View details for ${photo.alt}`);
+          });
+          cardBody.appendChild(viewButton);
+
 
           card.appendChild(imgContainer);
           card.appendChild(cardBody);
